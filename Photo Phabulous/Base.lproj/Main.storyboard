@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kob-23-x0O">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Collection View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CollectionViewController" customModule="Photo_Phabulous" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jYB-2t-kgI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2XK-O7-pVV">
+                            <size key="itemSize" width="134" height="134"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ZjN-Rm-Uvt" customClass="ImageCollectionViewCell" customModule="Photo_Phabulous" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="134" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="134" height="134"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3LK-Jl-vXs">
+                                            <rect key="frame" x="0.0" y="0.0" width="134" height="134"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="3LK-Jl-vXs" secondAttribute="height" multiplier="1:1" id="ecu-84-7Xd"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3LK-Jl-vXs" firstAttribute="top" secondItem="ZjN-Rm-Uvt" secondAttribute="top" id="1Fd-jn-2uy"/>
+                                    <constraint firstItem="3LK-Jl-vXs" firstAttribute="leading" secondItem="ZjN-Rm-Uvt" secondAttribute="leading" id="mjt-1m-ZHC"/>
+                                    <constraint firstAttribute="bottom" secondItem="3LK-Jl-vXs" secondAttribute="bottom" id="xat-mv-orT"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="3LK-Jl-vXs" id="bCM-XF-0OS"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="BYZ-38-t0r" id="uRe-de-aDe"/>
+                            <outlet property="delegate" destination="BYZ-38-t0r" id="izs-Lz-kIU"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="xln-oz-Iaf">
+                        <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-unsplash-filled-50" id="xUg-6h-lvp">
+                            <connections>
+                                <segue destination="yeA-GP-DLf" kind="show" identifier="ChoosePhoto" id="Xfs-Bb-iGc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="jYB-2t-kgI" id="Rc9-p2-L95"/>
+                        <segue destination="4QT-tn-Cn7" kind="show" identifier="detailer" id="tuc-Nb-Rt8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="RUW-co-qbn">
+            <objects>
+                <viewController id="4QT-tn-Cn7" customClass="ImageDetailViewController" customModule="Photo_Phabulous" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tge-iv-z6X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIz-51-fWI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="KsT-WM-LTi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hlw-sq-dQh">
+                        <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-twitter-26" id="jpl-k9-cWc">
+                            <connections>
+                                <action selector="sharePicture" destination="4QT-tn-Cn7" id="GOg-OD-JVx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageDetail" destination="EIz-51-fWI" id="qdC-C7-64l"/>
+                        <outlet property="socialShare" destination="jpl-k9-cWc" id="Mol-tQ-8pt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xq6-0e-1yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="896.40179910044981"/>
+        </scene>
+        <!--Image Picker View Controller-->
+        <scene sceneID="QLa-kO-9En">
+            <objects>
+                <viewController id="yeA-GP-DLf" customClass="UIImagePickerViewController" customModule="Photo_Phabulous" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p0g-0m-Wq5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Zd1-T0-r8a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRu-Mn-XqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZsD-dC-bz6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kob-23-x0O" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L2w-yF-yCQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="19d-2M-WnQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVQ-vW-f5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-twitter-26" width="26" height="26"/>
+        <image name="icons8-unsplash-filled-50" width="25" height="25"/>
+    </resources>
+</document>
